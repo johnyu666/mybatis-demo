@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.johnyu.dao.BookMapper">
+    <select id="loadBook" resultType="book">
+    select * from books where id = #{id}
+  </select>
+    <select id="findAllBooks" resultType="Book">
+        select * from books
+    </select>
+
+    <insert id="addBook" parameterType="Book">
+        insert into books (name) value (#{name})
+    </insert>
+    <update id="updateBook">
+        update books set name=#{book.name} where id=#{id}
+    </update>
+</mapper>
